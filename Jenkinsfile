@@ -6,22 +6,22 @@ pipeline {
     stages {
         stage('Restore packages'){
            steps{
-               sh 'dotnet restore '
+               sh 'nuget restore '
             }
          }        
         stage('Clean'){
            steps{
-               sh 'dotnet clean  --configuration Release'
+               sh 'nuget clean  --configuration Release'
             }
          }
         stage('Build'){
            steps{
-               sh 'dotnet build  --configuration Release --no-restore'
+               sh 'nuget build  --configuration Release --no-restore'
             }
          }
         stage('Publish'){
            steps{
-               sh 'dotnet publish  RandomQuotes.csproj --configuration Release --no-restore'
+               sh 'nuget publish  RandomQuotes.csproj --configuration Release --no-restore'
              }
         }
         
