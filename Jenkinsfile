@@ -21,7 +21,7 @@ pipeline {
          }
         stage('Publish'){
            steps{
-               sh 'dotnet publish  hwwebapp.csproj --configuration Release --no-restore'
+               sh 'dotnet publish  RandomQuotes.csproj --configuration Release --no-restore'
              }
         }
         
